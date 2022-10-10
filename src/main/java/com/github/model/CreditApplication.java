@@ -2,7 +2,9 @@ package com.github.model;
 
 
 
-import com.vladmihalcea.hibernate.type.interval.PostgreSQLIntervalType;
+
+import com.github.instruments.Interval;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import java.math.BigDecimal;
@@ -14,10 +16,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "credit_application")
-@TypeDef(
-        typeClass = PostgreSQLIntervalType.class,
-        defaultForType = Duration.class
-)
+@TypeDef(name="interval", typeClass = Interval.class)
 public class CreditApplication {
 
     @Id
@@ -27,7 +26,8 @@ public class CreditApplication {
     @ManyToOne
     @JoinColumn(name="client_id",referencedColumnName = "id")
     private Client client;
-    @Column(name="period_of_employment", columnDefinition = "interval")
+    @Column(name="period_of_employment")
+    @Type(type = "interval")
     private Duration period_of_employment;
     @Column(name="position_at_work")
     private String position_at_work;

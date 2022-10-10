@@ -1,8 +1,5 @@
 package com.github.model;
 
-
-
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
