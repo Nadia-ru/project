@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="project/Hibernate" uuid="5ad8fab3-2b45-4e84-ab89-ebf663b653ed">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="81ffbb6d-4822-49fb-bbf9-ae38073eaf65">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="bank_service@localhost" uuid="aed85ab4-5b43-41cc-8176-a2d032cf4727">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/bank_service</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>

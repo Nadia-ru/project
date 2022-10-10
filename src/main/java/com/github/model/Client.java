@@ -1,10 +1,9 @@
 package com.github.model;
 
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
 
+
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -107,6 +106,10 @@ public class Client {
 
     public List<CreditApplication> getApplications() {
         return applications;
+    }
+
+    public void setApplications(List<CreditApplication> applications) {
+        this.applications = applications;
     }
 
     @Override

@@ -1,12 +1,23 @@
 package com.github.model;
 
-import jakarta.persistence.*;
+
+
+import com.vladmihalcea.hibernate.type.interval.PostgreSQLIntervalType;
+import org.hibernate.annotations.TypeDef;
 
 import java.math.BigDecimal;
+
+import javax.persistence.*;
+import java.time.Duration;
 import java.util.List;
+
 
 @Entity
 @Table(name = "credit_application")
+@TypeDef(
+        typeClass = PostgreSQLIntervalType.class,
+        defaultForType = Duration.class
+)
 public class CreditApplication {
 
     @Id
@@ -16,8 +27,8 @@ public class CreditApplication {
     @ManyToOne
     @JoinColumn(name="client_id",referencedColumnName = "id")
     private Client client;
-    @Column(name="period_of_employment")
-    private String period_of_employment;
+    @Column(name="period_of_employment", columnDefinition = "interval")
+    private Duration period_of_employment;
     @Column(name="position_at_work")
     private String position_at_work;
     @Column(name="name_of_organization")
@@ -30,7 +41,7 @@ public class CreditApplication {
 
     public CreditApplication() {}
 
-    public CreditApplication( Client client, String period_of_employment, String position_at_work, String name_of_organization, BigDecimal amount_of_credit) {
+    public CreditApplication(Client client, Duration period_of_employment, String position_at_work, String name_of_organization, BigDecimal amount_of_credit) {
 
         this.client = client;
         this.period_of_employment = period_of_employment;
