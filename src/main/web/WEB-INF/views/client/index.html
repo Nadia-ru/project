@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="person : ${client}">
+   <p th:text="${person.getFirst_name() + ', ' + person.getLast_name()}">user</p>
+</div>
+
+<br/>
+<hr/>
+
+
+</body>
+</html>

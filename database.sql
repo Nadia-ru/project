@@ -29,10 +29,11 @@ CREATE TABLE IF NOT EXISTS public.credit_application
 (
     id integer NOT NULL DEFAULT nextval('credit_application_id_seq'::regclass),
     client_id integer NOT NULL,
-    period_of_employment interval NOT NULL,
     amount_of_credit numeric NOT NULL,
     position_at_work character varying(40) COLLATE pg_catalog."default" NOT NULL,
     name_of_organization character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    period_of_employment_start date NOT NULL,
+    period_of_employment_end date NOT NULL,
     CONSTRAINT credit_application_pkey PRIMARY KEY (id)
 );
 

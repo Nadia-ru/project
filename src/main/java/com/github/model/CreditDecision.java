@@ -29,4 +29,41 @@ public class CreditDecision {
         this.credit_term = credit_term;
         this.approved_credit_amount = approved_credit_amount;
     }
+
+    public int getId() {
+        return id;
+    }
+
+
+    public CreditApplication getApplication() {
+        return application;
+    }
+
+    public void setApplication(CreditApplication application) {
+        this.application = application;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public int getCredit_term() {
+        return credit_term;
+    }
+
+    public void setCredit_term(int credit_term) {
+        this.credit_term = credit_term;
+    }
+
+    public BigDecimal getApproved_credit_amount() {
+        return approved_credit_amount;
+    }
+
+    public void setApproved_credit_amount(BigDecimal approved_credit_amount) {
+        this.approved_credit_amount = approved_credit_amount;
+    }
 }

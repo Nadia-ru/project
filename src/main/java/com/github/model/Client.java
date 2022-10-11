@@ -3,6 +3,8 @@ package com.github.model;
 
 
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -29,6 +31,7 @@ public class Client {
     @Column(name="password_series")
     private int password_series;
     @OneToMany(mappedBy = "client")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private List<CreditApplication> applications;
     public Client() {}
 
