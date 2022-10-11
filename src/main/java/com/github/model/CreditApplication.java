@@ -63,4 +63,57 @@ public class CreditApplication {
         this.agreement=agreement;
         agreement.setApplication_final(this);
     }
+
+    public int getId() {
+        return id;
+    }
+
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Date getPeriod_of_employment_start() {
+        return period_of_employment_start;
+    }
+
+    public void setPeriod_of_employment_start(Date period_of_employment_start) {
+        this.period_of_employment_start = period_of_employment_start;
+    }
+
+    public Date getPeriod_of_employment_end() {
+        return period_of_employment_end;
+    }
+
+    public void setPeriod_of_employment_end(Date period_of_employment_end) {
+        this.period_of_employment_end = period_of_employment_end;
+    }
+
+    public String getPosition_at_work() {
+        return position_at_work;
+    }
+
+    public void setPosition_at_work(String position_at_work) {
+        this.position_at_work = position_at_work;
+    }
+
+    public String getName_of_organization() {
+        return name_of_organization;
+    }
+
+    public void setName_of_organization(String name_of_organization) {
+        this.name_of_organization = name_of_organization;
+    }
+
+    public BigDecimal getAmount_of_credit() {
+        return amount_of_credit;
+    }
+
+    public void setAmount_of_credit(BigDecimal amount_of_credit) {
+        this.amount_of_credit = amount_of_credit;
+    }
 }

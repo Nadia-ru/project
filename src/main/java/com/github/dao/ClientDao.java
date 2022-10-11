@@ -1,6 +1,8 @@
 package com.github.dao;
 
 import com.github.model.Client;
+import com.github.model.CreditApplication;
+import com.github.model.CreditDecision;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class ClientDao {
@@ -55,8 +58,14 @@ public class ClientDao {
     }
 
     @Transactional
-    public void save(Client client){
+    public void save(Client client, CreditApplication application){
         Session session = sessionFactory.getCurrentSession();
         session.save(client);
+        session.save(application);
+        Random random = new Random();
+        boolean status = random.nextBoolean();
+        int credit_term = random.nextInt();
+        CreditDecision creditDecision = new CreditDecision(application,status,credit_term,application.getAmount_of_credit());
+        session.save(creditDecision);
     }
 }
